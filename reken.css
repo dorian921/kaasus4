@@ -1,0 +1,19 @@
+body{
+  background-color: pink;
+}
+
+
+table, th, td, tr{
+  border: 2px black solid;
+  
+  font-size: 40px;
+ 
+}
+
+form , button, input{
+  font-size: 36px;
+}
+
+button{
+  background-color: white;
+}
