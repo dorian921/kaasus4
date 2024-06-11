@@ -156,8 +156,7 @@ try {
 } catch (ParseError $e) {
   echo "Error: Invalid expression";
 }
-if(!isset($result)){
-echo $result;}
+
   };
 
   

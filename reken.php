@@ -51,7 +51,7 @@
     
     
     <button type="button" value="/" class="op" name="delen" class="delen">/</button>
-    <button type="button" value="" class="op" name="delen" class="delen"></button>
+    <button type="button" value="√" class="op" name="delen" class="delen">√</button>
     
     <button type="button" value="^" class="op" name="macht" class="macht">^</button >
     
