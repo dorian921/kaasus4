@@ -5,21 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="reken.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
   <form method="POST">
     <label for="input">input:</label>
+    
+    <br>
     <input  name="input" id="inputbox"  type="text" >
     <br>
-    <?php
-      include "function.php";
-      if(isset($_POST["bereken"])) {
-      formOutput();
-      }
-
-
-?>
+    <label for="">afrond preciesie op decimalen:</label>
+    <br>
+    <input  name="inputaf" id="inputafrond"  type="text" >
+    <br>
+    <br>
+    <label for="antwoord">antwoord:</label>
+    <br>
+     <input readonly type="text" id="outputbox" value="<?php include "function.php"; if(isset($_POST["bereken"])) {formOutput();} echo $phpres;?>">
+    
+   <br>
 
     
     <br>
@@ -51,12 +56,13 @@
     
     <button type="button" value="%" class="op" name="modulo" class="modulo">%</button >
     <br>
-    <button type="button" name="afronden" class="afronden">afronden</button>
+    <button type="button" name="afronden" id="afronden" class="afronden">afronden</button>
     
     <button   name="bereken" class="bereken">bereken</button>
    
   </form>
-<script src="reken.js" ></script>
+
+
   <?php
 
 rekendata();
@@ -65,6 +71,7 @@ rekendata();
 
 
 ?>
+<script src="reken.js"></script>
 </body>
 
 </html>
