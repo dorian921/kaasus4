@@ -62,7 +62,7 @@ include_once "config.php";
 }
 
    if ($operator === '^^') {
-      $value = trim(str_replace('^2', '', $input));
+      $value = trim(str_replace('^^', '', $input));
       $value = intval($value);
       $result = pow($value, 2);
 
@@ -150,8 +150,7 @@ try {
 } catch (ParseError $e) {
   echo "Error: Invalid expression";
 }
-if(!isset($result)){
-echo $result;}
+
   };
 
 }
