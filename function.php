@@ -49,26 +49,34 @@ include_once "config.php";
     $operator = '/';
   }   elseif(strpos($input, '√') !== false) {
     $operator = '√';
-  }  elseif(strpos($input, '^^') !== false) {
-      $operator = '^^';
   }
    elseif(strpos($input, '^') !== false) {
   $operator = '^';}
   elseif(strpos($input, '%') !== false) {
     $operator = '%';
-  
-} else{
+  } 
+
+ else{
   echo "vul iets in";
 }
 
-   if ($operator === '^^') {
-      $value = trim(str_replace('^^', '', $input));
-      $value = intval($value);
-      $result = pow($value, 2);
-
-  }
-
   
+
+
+  if ($operator === '√') {
+    $value = trim(str_replace('√', '', $input));
+    $value = intval($value);
+    if ($value < 0) {
+        $result = "Error: Square root of a negative number";
+    } else {
+        $result = sqrt($value);
+    }
+   
+
+
+
+        
+ }
   else {
 
     $values = explode($operator , $input);
@@ -107,15 +115,13 @@ include_once "config.php";
       case '%': 
         $result  = $values[0];
                 for ($i = 1; $i < count($values); $i++) {
-                $result %= $values[$i]; } 
+                $result %= $values[$i]; }
+
+        
+                  
+        
       break;
 
-      case '^': 
-        $result = $values[0];
-        for ($i = 1; $i < count($values); $i++) {
-            $result = pow($result, $values[$i]);
-        }
-        break;
     
       default:
               $result = "vul geldige tekens in";
@@ -150,13 +156,14 @@ try {
 } catch (ParseError $e) {
   echo "Error: Invalid expression";
 }
-
+if(!isset($result)){
+echo $result;}
   };
-
-}
 
   
 
+  
+}
 
 $phpres = formOutput();
 
