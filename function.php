@@ -67,15 +67,12 @@ include_once "config.php";
     $value = trim(str_replace('√', '', $input));
     $value = intval($value);
     if ($value < 0) {
-        $result = "Error: Square root of a negative number";
+        $result = "Error: wortel van negatief nummer";
     } else {
         $result = sqrt($value);
+        return $result;
     }
-   
-
-
-
-        
+         
  }
   else {
 
@@ -116,11 +113,9 @@ include_once "config.php";
         $result  = $values[0];
                 for ($i = 1; $i < count($values); $i++) {
                 $result %= $values[$i]; }
-
-        
-                  
-        
       break;
+
+      
 
     
       default:
